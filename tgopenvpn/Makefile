@@ -7,7 +7,6 @@ PKG_RELEASE:=1
 PKG_SOURCE_PROTO:=git
 PKG_SOURCE_URL:=https://github.com/torguardvpn/tgopenvpn.git
 PKG_SOURCE_VERSION:=4b42dac782df7b656740cbe262b27d66e95350f1
-PKG_MIRROR_HASH:=skip
 
 include $(INCLUDE_DIR)/package.mk
 

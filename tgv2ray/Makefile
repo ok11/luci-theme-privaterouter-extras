@@ -7,7 +7,6 @@ PKG_RELEASE:=1
 PKG_SOURCE_PROTO:=git
 PKG_SOURCE_URL:=https://github.com/torguardvpn/tgv2ray.git
 PKG_SOURCE_VERSION:=375ea1b7bf0d05b3489f27f8e877f6d0880c7d01
-PKG_MIRROR_HASH:=skip
 
 PKG_LICENSE:=GPL-3.0
 PKG_MAINTAINER:=TorGuard <support@torguard.net>
