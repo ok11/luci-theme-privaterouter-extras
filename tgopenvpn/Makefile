@@ -7,14 +7,34 @@ PKG_RELEASE:=1
 PKG_SOURCE_PROTO:=git
 PKG_SOURCE_URL:=https://github.com/torguardvpn/tgopenvpn.git
 PKG_SOURCE_VERSION:=4b42dac782df7b656740cbe262b27d66e95350f1
-PKG_MIRROR_HASH:=37b6c26b961b31b53e5329f8517fbd3995b4e246f4df648ea6e7c47b125d06c3
+PKG_MIRROR_HASH:=skip
 
-LUCI_TITLE:=LuCI support for TorGuard OpenVPN
-LUCI_PKGARCH:=all
-LUCI_DEPENDS:=+openvpn-openssl
+include $(INCLUDE_DIR)/package.mk
+
+define Package/tgopenvpn
+  SECTION:=luci
+  CATEGORY:=LuCI
+  SUBMENU:=7. TorGuard
+  TITLE:=LuCI support for TorGuard OpenVPN
+  DEPENDS:=+openvpn-openssl +luci-lua-runtime
+  PKGARCH:=all
+endef
+
+define Package/tgopenvpn/description
+  LuCI configuration interface for TorGuard OpenVPN.
+endef
 
 define Package/tgopenvpn/conffiles
 /etc/config/tgopenvpn_cfg
 endef
 
-include $(TOPDIR)/feeds/luci/luci.mk
+define Build/Compile
+endef
+
+define Package/tgopenvpn/install
+	$(INSTALL_DIR) $(1)/usr/lib/lua/luci
+	$(CP) $(PKG_BUILD_DIR)/luasrc/* $(1)/usr/lib/lua/luci/
+	$(CP) $(PKG_BUILD_DIR)/root/* $(1)/
+endef
+
+$(eval $(call BuildPackage,$(PKG_NAME)))
