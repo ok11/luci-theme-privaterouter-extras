@@ -35,6 +35,4 @@ jobs:
         uses: actions/upload-artifact@v5
         with:
           name: ${{ matrix.branch }}-packages
-          path: |
-            bin/packages/${{ matrix.arch }}/action/*.ipk
-            bin/packages/${{ matrix.arch }}/action/*.apk
+          path: bin/packages/${{ matrix.arch }}/action/*.apk
