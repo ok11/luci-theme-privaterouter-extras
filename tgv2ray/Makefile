@@ -19,7 +19,7 @@ define Package/tgv2ray
   CATEGORY:=Network
   SUBMENU:=VPN
   TITLE:=TorGuard V2Ray / sing-box VPN
-  DEPENDS:=+luci-lua-runtime +luci-compat +curl +jq +bash +coreutils-base64 +sing-box
+  DEPENDS:=+luci-lua-runtime +luci-compat +curl +jq +bash +coreutils-base64
   PKGARCH:=all
 endef
 
