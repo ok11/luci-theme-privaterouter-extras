@@ -29,7 +29,6 @@ jobs:
           ARCH: ${{ matrix.arch }}-${{ matrix.branch }}
           PACKAGES: tgwireguard tgwireguard2 tgopenvpn tgv2ray luci-app-easymesh
           NO_REFRESH_CHECK: true
-          V: sc
 
       - name: upload
         uses: actions/upload-artifact@v5
